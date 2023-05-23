@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bienvenidaFragment">
+
+    <fragment
+        android:id="@+id/bienvenidaFragment"
+        android:name="com.fercamacho.actividad6.bienvenidaFragment"
+        android:label="fragment_bienvenida"
+        tools:layout="@layout/fragment_bienvenida" >
+        <action
+            android:id="@+id/action_bienvenidaFragment_to_planesFragment"
+            app:destination="@id/planesFragment" />
+        <action
+            android:id="@+id/action_bienvenidaFragment_to_misMascotasFragment"
+            app:destination="@id/misMascotasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/misMascotasFragment"
+        android:name="com.fercamacho.actividad6.misMascotasFragment"
+        android:label="fragment_mis_mascotas"
+        tools:layout="@layout/fragment_mis_mascotas" />
+    <fragment
+        android:id="@+id/planesFragment"
+        android:name="com.fercamacho.actividad6.planesFragment"
+        android:label="fragment_planes"
+        tools:layout="@layout/fragment_planes" >
+        <argument
+            android:name="Nombre"
+            app:argType="string" />
+        <argument
+            android:name="Carrera"
+            app:argType="string" />
+    </fragment>
+    <action android:id="@+id/action_global_bienvenidaFragment" app:destination="@id/bienvenidaFragment" />
+</navigation>
